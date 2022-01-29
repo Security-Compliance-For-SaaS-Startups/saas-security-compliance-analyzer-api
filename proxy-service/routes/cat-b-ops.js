@@ -1,5 +1,5 @@
 const config = require("../config/config.js");
-var mongoAdapter = require("../mongoadapter");
+var mongoAdapter = require("../mongo-adapter");
 const http = require('http');
 
 exports.analyizeCatBOpsDataCluster = function (req, response) {

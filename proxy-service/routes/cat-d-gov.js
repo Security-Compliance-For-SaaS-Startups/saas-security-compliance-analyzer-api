@@ -69,7 +69,7 @@ exports.analyizeCatDGovDataCluster = function (req, response) {
 
                             var result;
 
-                            if (parsedData == "3") {
+                            if (parsedData == "2") {
                                 result = JSON.stringify({
                                     response: true,
                                     code: 200,
@@ -78,7 +78,7 @@ exports.analyizeCatDGovDataCluster = function (req, response) {
                                     analysis: config.category.CatDGovRecommendationBest
                                 });
 
-                            } else if (parsedData == "2") {
+                            } else if (parsedData == "3") {
                                 result = JSON.stringify({
                                     response: true,
                                     code: 200,

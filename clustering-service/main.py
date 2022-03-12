@@ -2,11 +2,9 @@ import urllib
 from pymongo import MongoClient
 from sklearn import preprocessing
 from kmodes.kmodes import KModes
-import _pickle as pickle
 import numpy as np
 import pandas as pd
 pd.set_option('display.max_colwidth', 500)
-
 
 class ML:
 

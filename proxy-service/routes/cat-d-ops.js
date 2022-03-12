@@ -24,7 +24,7 @@ exports.analyizeCatDOpsDataCluster = function (req, response) {
                 var response_score = 0;
 
                 for (const mandatory_questions_id of mandatory_questions_ids) {
-                    if (catAGovReqObject[mandatory_questions_id].toLowerCase() == "yes") {
+                    if (catDOpsReqObject[mandatory_questions_id].toLowerCase() == "yes") {
                         response_score++;
                     }
                 }
@@ -76,7 +76,8 @@ exports.analyizeCatDOpsDataCluster = function (req, response) {
                                     code: 200,
                                     response_cluster: parsedData,
                                     score_percentage: final_score_percentage,
-                                    analysis: config.category.CatDOpsRecommendationBest
+                                    insight: config.category.CatDOpsBestInsight,
+                                    recommendation: config.category.CatDOpsBestRecommendation
                                 });
 
                             } else if (parsedData == "1") {
@@ -85,7 +86,8 @@ exports.analyizeCatDOpsDataCluster = function (req, response) {
                                     code: 200,
                                     response_cluster: parsedData,
                                     score_percentage: final_score_percentage,
-                                    analysis: config.category.CatDOpsRecommendationWorst
+                                    insight: config.category.CatDOpsWorstInsight,
+                                    recommendation: config.category.CatDOpsWorstRecommendation
                                 });
 
                             } else if (parsedData == "2" || parsedData == '3') {
@@ -94,7 +96,8 @@ exports.analyizeCatDOpsDataCluster = function (req, response) {
                                     code: 200,
                                     response_cluster: parsedData,
                                     score_percentage: final_score_percentage,
-                                    analysis: config.category.CatDOpsRecommendationMedium
+                                    insight: config.category.CatDOpsMediumInsight,
+                                    recommendation: config.category.CatDOpsRecommendationMedium
                                 });
 
                             } else {

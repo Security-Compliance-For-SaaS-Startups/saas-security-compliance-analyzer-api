@@ -79,7 +79,8 @@ exports.analyizeCatBGovDataCluster = function (req, response) {
                                     code: 200,
                                     response_cluster: parsedData,
                                     score_percentage: final_score_percentage,
-                                    analysis: config.category.CatBGovRecommendationBest
+                                    insight: config.category.CatBGovBestInsight,
+                                    recommendation: config.category.CatBGovBestRecommendation
                                 });
 
                             } else if (parsedData == "1" || parsedData == "2") {
@@ -88,7 +89,8 @@ exports.analyizeCatBGovDataCluster = function (req, response) {
                                     code: 200,
                                     response_cluster: parsedData,
                                     score_percentage: final_score_percentage,
-                                    analysis: config.category.CatBGovRecommendationWorst
+                                    insight: config.category.CatBGovWorstInsight,
+                                    recommendation: config.category.CatBGovWorstRecommendation
                                 });
 
                             } else {

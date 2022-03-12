@@ -23,7 +23,7 @@ exports.analyizeCatDGovDataCluster = function (req, response) {
                 var response_score = 0;
 
                 for (const mandatory_questions_id of mandatory_questions_ids) {
-                    if (catAGovReqObject[mandatory_questions_id].toLowerCase() == "yes") {
+                    if (catDGovReqObject[mandatory_questions_id].toLowerCase() == "yes") {
                         response_score++;
                     }
                 }
@@ -75,7 +75,8 @@ exports.analyizeCatDGovDataCluster = function (req, response) {
                                     code: 200,
                                     response_cluster: parsedData,
                                     score_percentage: final_score_percentage,
-                                    analysis: config.category.CatDGovRecommendationBest
+                                    insight: config.category.CatDGovBestInsight,
+                                    recommendation: config.category.CatDGovBestRecommendation
                                 });
 
                             } else if (parsedData == "3") {
@@ -84,7 +85,8 @@ exports.analyizeCatDGovDataCluster = function (req, response) {
                                     code: 200,
                                     response_cluster: parsedData,
                                     score_percentage: final_score_percentage,
-                                    analysis: config.category.CatDGovRecommendationWorst
+                                    insight: config.category.CatDGovWorstInsight,
+                                    recommendation: config.category.CatDGovWorstRecommendation
                                 });
 
                             } else if (parsedData == "0" || parsedData == "1") {
@@ -93,7 +95,8 @@ exports.analyizeCatDGovDataCluster = function (req, response) {
                                     code: 200,
                                     response_cluster: parsedData,
                                     score_percentage: final_score_percentage,
-                                    analysis: config.category.CatDGovRecommendationMedium
+                                    insight: config.category.CatDGovMediumInsight,
+                                    recommendation: config.category.CatDGovMediumRecommendation
                                 });
 
                             } else {

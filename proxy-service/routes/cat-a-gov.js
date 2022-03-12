@@ -73,7 +73,8 @@ exports.analyizeCatAGovDataCluster = function (req, response) {
                                     code: 200,
                                     response_cluster: parsedData,
                                     score_percentage: final_score_percentage,
-                                    analysis: config.category.CatAGovRecommendationBest
+                                    insight: config.category.CatAGovBestInsight,
+                                    recommendation: config.category.CatAGovBestRecommendation
                                 });
 
                             } else if (parsedData == "1") {
@@ -82,7 +83,8 @@ exports.analyizeCatAGovDataCluster = function (req, response) {
                                     code: 200,
                                     response_cluster: parsedData,
                                     score_percentage: final_score_percentage,
-                                    analysis: config.category.CatAGovRecommendationWorst
+                                    insight: config.category.CatAGovWorstInsight,
+                                    recommendation: config.category.CatAGovWorstRecommendation
                                 });
 
                             } else if (parsedData == "2") {
@@ -91,7 +93,8 @@ exports.analyizeCatAGovDataCluster = function (req, response) {
                                     code: 200,
                                     response_cluster: parsedData,
                                     score_percentage: final_score_percentage,
-                                    analysis: config.category.CatAGovRecommendationMedium
+                                    insight: config.category.CatAGovMediumInsight,
+                                    recommendation: config.category.CatAGovMediumRecommendation
                                 });
 
                             } else {

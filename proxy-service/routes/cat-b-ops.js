@@ -24,7 +24,7 @@ exports.analyizeCatBOpsDataCluster = function (req, response) {
                 var response_score = 0;
 
                 for (const mandatory_questions_id of mandatory_questions_ids) {
-                    if (catAGovReqObject[mandatory_questions_id].toLowerCase() == "yes") {
+                    if (catBOpsReqObject[mandatory_questions_id].toLowerCase() == "yes") {
                         response_score++;
                     }
                 }
@@ -76,7 +76,8 @@ exports.analyizeCatBOpsDataCluster = function (req, response) {
                                     code: 200,
                                     response_cluster: parsedData,
                                     score_percentage: final_score_percentage,
-                                    analysis: config.category.CatBOpsRecommendationBest
+                                    insight: config.category.CatBOpsBestInsight,
+                                    recommendation: config.category.CatBOpsBestRecommendation
                                 });
 
                             } else if (parsedData == "1") {
@@ -85,7 +86,8 @@ exports.analyizeCatBOpsDataCluster = function (req, response) {
                                     code: 200,
                                     response_cluster: parsedData,
                                     score_percentage: final_score_percentage,
-                                    analysis: config.category.CatBOpsRecommendationWorst
+                                    insight: config.category.CatBOpsWorstInsight,
+                                    recommendation: config.category.CatBOpsWorstRecommendation
                                 });
 
                             } else if (parsedData == "2") {
@@ -94,7 +96,8 @@ exports.analyizeCatBOpsDataCluster = function (req, response) {
                                     code: 200,
                                     response_cluster: parsedData,
                                     score_percentage: final_score_percentage,
-                                    analysis: config.category.CatBOpsRecommendationMedium
+                                    insight: config.category.CatBOpsMediumInsight,
+                                    recommendation: config.category.CatBOpsMediumRecommendation
                                 });
 
                             } else {

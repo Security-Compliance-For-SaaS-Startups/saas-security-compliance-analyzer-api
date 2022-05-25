@@ -80,7 +80,7 @@ exports.analyizeCatBOpsDataCluster = function (req, response) {
                                     recommendation: config.category.CatBOpsBestRecommendation
                                 });
 
-                            } else if (parsedData == "1") {
+                            } else if (parsedData == "1" || parsedData == "2") {
                                 result = JSON.stringify({
                                     response: true,
                                     code: 200,
@@ -90,17 +90,7 @@ exports.analyizeCatBOpsDataCluster = function (req, response) {
                                     recommendation: config.category.CatBOpsWorstRecommendation
                                 });
 
-                            } else if (parsedData == "2") {
-                                result = JSON.stringify({
-                                    response: true,
-                                    code: 200,
-                                    response_cluster: parsedData,
-                                    score_percentage: final_score_percentage,
-                                    insight: config.category.CatBOpsMediumInsight,
-                                    recommendation: config.category.CatBOpsMediumRecommendation
-                                });
-
-                            } else {
+                            }  else {
                                 response.writeHead(500, {"Content-Type": "application/json"});
                                 response.write(JSON.stringify({"message":"Error in returning response analysis"}));
                                 response.end();

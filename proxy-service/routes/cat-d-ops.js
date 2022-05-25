@@ -97,7 +97,7 @@ exports.analyizeCatDOpsDataCluster = function (req, response) {
                                     response_cluster: parsedData,
                                     score_percentage: final_score_percentage,
                                     insight: config.category.CatDOpsMediumInsight,
-                                    recommendation: config.category.CatDOpsRecommendationMedium
+                                    recommendation: config.category.CatDOpsMediumRecommendation
                                 });
 
                             } else {
